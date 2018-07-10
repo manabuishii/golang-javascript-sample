@@ -59,4 +59,9 @@ func main() {
     console.log("The value of def is " + xyzzy.input.aaaa);
     console.log("The value of def is " + xyzzy.input.bbbb);
 `)
+	// Get result
+	valueFrom := "xyzzy.input.bbbb"
+	result, _ := vm.Run(valueFrom)
+	fmt.Println("result===")
+	fmt.Println(result)
 }
