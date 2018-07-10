@@ -1,12 +1,10 @@
 package main
 
-// import (
-// 	"fmt"
+import (
+	"fmt"
 
-// 	"github.com/robertkrimen/otto"
-// )
-import "fmt"
-import "github.com/robertkrimen/otto"
+	"github.com/robertkrimen/otto"
+)
 
 func main() {
 	fmt.Printf("Hello World2\n")
