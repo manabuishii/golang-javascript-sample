@@ -1,9 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 	"os/exec"
 )
@@ -14,14 +14,15 @@ func main() {
 	fmt.Println(path)
 	var cmd *exec.Cmd
 	sF, _ := os.Open(path)
-	inputString, _ := ioutil.ReadAll(sF)
+	//inputString, _ := ioutil.ReadAll(sF)
 	//cmd.Stdin = sF
 	cmd = exec.Command("wc", "-l")
 	stdin, err := cmd.StdinPipe()
 	if err != nil {
 		fmt.Println(err)
 	}
-	io.WriteString(stdin, string(inputString))
+	//io.WriteString(stdin, string(inputString))
+	io.Copy(stdin, bufio.NewReader(sF))
 	stdin.Close()
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
