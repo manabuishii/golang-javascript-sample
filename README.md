@@ -13,3 +13,12 @@ go get github.com/robertkrimen/otto
 ```
 go run hello.go
 ```
+
+# sample
+
+```console
+$ go run filestdin.go
+sample.txt
+       5
+fin
+```
